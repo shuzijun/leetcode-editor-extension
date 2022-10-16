@@ -1,0 +1,26 @@
+{
+  "popup": {
+    "message": "The Leecode Editor Extension works with leecode.com, leetcode.cn, or codetop.cc. Make sure you're on your page.",
+    "description": "Popup message."
+  },
+  "options_desc": {
+    "message": "This plugin can quickly open the leetcode topic on the web page in the IDE.",
+    "description": "message."
+  },
+  "options_editor_tip": {
+    "message": "Select the version of the plugin, the IDE needs to install the IDE through the <a href='https://www.jetbrains.com/toolbox-app/'>toolbox</a>, and install the plugin <a href='https://github.com/shuzijun/leetcode-editor'>Leetcode Editor</a>.",
+    "description": "message."
+  },
+  "options_product_tip": {
+    "message": "Select the corresponding product.",
+    "description": "message."
+  },
+  "options_project_tip": {
+    "message": "Fill in the ProjectName of the IDE.",
+    "description": "message."
+  },
+  "open_ide": {
+    "message": "Open IDE",
+    "description": "message."
+  }
+}

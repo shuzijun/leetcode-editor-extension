@@ -1,0 +1,26 @@
+{
+  "popup": {
+    "message": "Leecode Editor Extension适用于leecode.com、leetcode.cn或codetop.cc。请确保你在页面上.",
+    "description": "Popup message."
+  },
+  "options_desc": {
+    "message": "本插件可以快速把网页上的leetcode题目在IDE中打开.",
+    "description": "message."
+  },
+  "options_editor_tip": {
+    "message": "<div>选择插件的版本,IDE需要通过<a href='https://www.jetbrains.com/toolbox-app/'>toolbox</a>安装IDE,并且安装插件<a href='https://github.com/shuzijun/leetcode-editor'>Leetcode Editor</a></div>",
+    "description": "message."
+  },
+  "options_product_tip": {
+    "message": "选择对应的产品.",
+    "description": "message."
+  },
+  "options_project_tip": {
+    "message": "填写IDE的ProjectName.",
+    "description": "message."
+  },
+  "open_ide": {
+    "message": "打开IDE",
+    "description": "message."
+  }
+}

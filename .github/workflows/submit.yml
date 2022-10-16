@@ -1,0 +1,82 @@
+name: "Release version"
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version'
+        required: true
+  push:
+    tags:
+      - 'v*.*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set LD_VERSION
+        if: ${{ github.event_name == 'push'}}
+        run: echo "LD_VERSION=${GITHUB_REF#refs/*/v}" >> $GITHUB_ENV
+      - name: Set LD_VERSION
+        if: ${{ github.event_name == 'workflow_dispatch'}}
+        run: echo "LD_VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
+
+      - uses: actions/checkout@v3
+      - name: Cache pnpm modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7.11.0
+          run_install: true
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3.4.1
+        with:
+          node-version: 16.x
+          cache: "pnpm"
+      - name: Build and zip extension artifact
+        run: |
+          pnpm build -- --zip
+          pnpm build --target=firefox-mv2 --zip
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ env.LD_VERSION }}
+          release_name: v${{ env.LD_VERSION }}
+          draft: true
+          prerelease: false
+
+      - name: Upload Chrome Release Asset
+        id: upload-chrome-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: ./build/chrome-mv3-prod.zip
+          asset_name: leetcode-editor-extension-chrome-${{ env.LD_VERSION }}.zip
+          asset_content_type: application/zip
+
+      - name: Upload Firefox Release Asset
+        id: upload-firefox-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: ./build/firefox-mv2-prod.zip
+          asset_name: leetcode-editor-extension-firefox-${{ env.LD_VERSION }}.zip
+          asset_content_type: application/zip
+
+#      - name: Browser Platform Publish
+#        uses: PlasmoHQ/bpp@v2
+#        with:
+#          keys: ${{ secrets.SUBMIT_KEYS }}
+#         artifact: build/chrome-mv3-prod.zip
