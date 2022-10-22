@@ -1,4 +1,4 @@
-import type { PlasmoContentScript, PlasmoGetInlineAnchor } from "plasmo"
+import type {PlasmoContentScript, PlasmoGetInlineAnchor} from "plasmo"
 import {Button, Tooltip} from 'antd';
 import cssText from "data-text:~/src/index.less"
 
@@ -18,7 +18,7 @@ export const getStyle = () => {
 
 
 export const getInlineAnchor: PlasmoGetInlineAnchor = () =>
-document.querySelector(".select__2iyW")
+    document.querySelector(".select__2iyW")
 
 // Use this to optimize unmount lookups
 export const getShadowHostId = () => "leetcode-editor-open-id"
@@ -29,18 +29,23 @@ const GetUrl = () => {
     const [project] = useStorage("Project", "")
     const slug = window.location.pathname.split('/')[2]
 
-    return "jetbrains://" + product + "/"+ editor + "/open?project="+ project + "&slug=" + slug
+    return "jetbrains://" + product + "/" + editor + "/open?project=" + project + "&slug=" + slug
 }
 
 const LeetcodeComItem = () => {
-
+    const [showIcon] = useStorage("ShowIcon", true)
     const logo = GetLogo()
     const url = GetUrl()
 
+    function click() {
+        window.open(url)
+    }
+
     return (
-            <Tooltip title={chrome.i18n.getMessage("open_ide")}>
-                <Button type="text" href={ url } icon={ logo } target='_blank'/>
-            </Tooltip>
+        <Tooltip title={chrome.i18n.getMessage("open_ide")}>
+            <Button hidden={!showIcon} type="text" onClick={click} icon={logo} target='_blank'
+                    style={{paddingTop: 0.25 + 'em'}}/>
+        </Tooltip>
 
     )
 }

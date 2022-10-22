@@ -1,6 +1,6 @@
 {
   "popup": {
-    "message": "Leecode Editor Extension适用于leecode.com、leetcode.cn或codetop.cc。请确保你在页面上.",
+    "message": "Leecode Editor Extension适用于leecode.com,leetcode.cn或codetop.cc. 请确保你在页面上.",
     "description": "Popup message."
   },
   "options_desc": {
