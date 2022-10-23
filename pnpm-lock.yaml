@@ -11,7 +11,8 @@ specifiers:
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
   antd: ^4.23.5
-  plasmo: 0.57.1
+  crypto-js: ^4.1.1
+  plasmo: 0.57.2
   prettier: 2.7.1
   react: 18.2.0
   react-dom: 18.2.0
@@ -22,6 +23,7 @@ dependencies:
   '@jetbrains/logos': 2.2.7
   '@plasmohq/storage': 0.12.2_react@18.2.0
   antd: 4.23.5_biqbaboplfbrettd7655fr4n2y
+  crypto-js: 4.1.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -32,7 +34,7 @@ devDependencies:
   '@types/node': 18.8.3
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
-  plasmo: 0.57.1_biqbaboplfbrettd7655fr4n2y
+  plasmo: 0.57.2_biqbaboplfbrettd7655fr4n2y
   prettier: 2.7.1
   typescript: 4.8.4
 
@@ -1383,8 +1385,8 @@ packages:
       nullthrows: 1.1.1
     dev: true
 
-  /@plasmohq/parcel-config/0.19.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-8rFX48A8j3LX+3v3tPLQFQrtkzIF67/Gxxv/AmL3PAdEkh3nHiGbMLmzHZ6Aq4un1oFbKeJ9PeRGBKuhT1PrCw==}
+  /@plasmohq/parcel-config/0.19.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-nJOYVSH3sEb7ZswyJn0hQTHQjhGeEuLCUz1CaBlpPjuTtO2oXKPIh6YqXM3m3sGYSkHN6GlKm+j3cJSXNIHY4w==}
     dependencies:
       '@parcel/config-default': 2.7.0_@parcel+core@2.7.0
       '@parcel/core': 2.7.0
@@ -1407,7 +1409,7 @@ packages:
       '@plasmohq/parcel-runtime': 0.9.3
       '@plasmohq/parcel-transformer-inject-env': 0.1.4
       '@plasmohq/parcel-transformer-inline-css': 0.1.6
-      '@plasmohq/parcel-transformer-manifest': 0.11.1
+      '@plasmohq/parcel-transformer-manifest': 0.11.2
       '@plasmohq/parcel-transformer-svelte3': 0.2.4
       '@plasmohq/parcel-transformer-vue3': 0.2.7_biqbaboplfbrettd7655fr4n2y
     transitivePeerDependencies:
@@ -1527,8 +1529,8 @@ packages:
       '@parcel/utils': 2.7.0
     dev: true
 
-  /@plasmohq/parcel-transformer-manifest/0.11.1:
-    resolution: {integrity: sha512-ArQPDN2kQSLt1fPqG+q4jzuPP+hDs8iJEy8dmy6P/x0J5SWqH7+b2qVcaRp1eZB2nIYMvvQx3x95LHGElkH9/w==}
+  /@plasmohq/parcel-transformer-manifest/0.11.2:
+    resolution: {integrity: sha512-AqMCs4Cdxbmc3PculqvfiSg9q3KglyxshezhaNMOp2hDa+R7JDwc9woz7gBUKi8W/x3K2613JwM68MaJbHa3UQ==}
     engines: {parcel: '>= 2.7.0'}
     dependencies:
       '@mischnic/json-sourcemap': 0.1.0
@@ -2345,6 +2347,10 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /crypto-js/4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==}
+    dev: false
 
   /crypto-random-string/4.0.0:
     resolution: {integrity: sha512-x8dy3RnvYdlUcPOjkEHqozhiwzKNSq7GcPuXFbnyMOCHxX8V3OgIg/pYuabl2sbUPfIJaeAQB7PMOK8DFIdoRA==}
@@ -3528,8 +3534,8 @@ packages:
     dev: true
     optional: true
 
-  /plasmo/0.57.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-RXh0gp1blS+MectHHBGmHxcOCUO3Z7emROBYL64e271ul4Xnyei4V7euif+3TbbUEKklN+EPTFOxYYrFB7wYOg==}
+  /plasmo/0.57.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-uvCq7K5m8AY8u2Yp0tkiO6cjFkqWaj/FwSBBYAsFo6Fl5nTCOQkjb4jPaMkT8hm4CpPkq1FqRB7l3oOIttkuWw==}
     hasBin: true
     dependencies:
       '@expo/spawn-async': 1.7.0
@@ -3538,7 +3544,7 @@ packages:
       '@parcel/package-manager': 2.7.0_@parcel+core@2.7.0
       '@parcel/watcher': 2.0.5
       '@plasmohq/init': 0.3.3
-      '@plasmohq/parcel-config': 0.19.1_biqbaboplfbrettd7655fr4n2y
+      '@plasmohq/parcel-config': 0.19.2_biqbaboplfbrettd7655fr4n2y
       archiver: 5.3.1
       buffer: 6.0.3
       chalk: 5.1.2
