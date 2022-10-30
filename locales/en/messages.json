@@ -22,5 +22,9 @@
   "open_ide": {
     "message": "Open IDE",
     "description": "message."
+  },
+  "affix_toolbox": {
+    "message": "Toolbox",
+    "description": "message."
   }
 }

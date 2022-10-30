@@ -1,7 +1,7 @@
 {
   "name": "leetcode-editor-extension",
   "displayName": "Leetcode editor extension",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Quickly open problems in IntelliJ Platform IDEs.",
   "author": "shuzijun",
   "scripts": {
@@ -36,7 +36,8 @@
       "https://codetop.cc/*"
     ],
     "permissions": [
-      "cookies"
+      "cookies",
+      "webRequest"
     ]
   }
 }

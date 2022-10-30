@@ -7,7 +7,7 @@ The Chrmoe plug-in for [Leetcode Editor](https://github.com/shuzijun/leetcode-ed
 
 ## Installation
 
-1. Install from the Chrome Store
+1. Install from the Chrome Store [link](https://chrome.google.com/webstore/detail/leetcode-editor-extension/kikcppmgphhkffcdhldclbidggbieegc)  
 2. Download the file to install
 
 ## How to use

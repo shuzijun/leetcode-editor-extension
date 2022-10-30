@@ -7,7 +7,7 @@
 
 ## 安装方式
 
-1. 从Chrome商店安装
+1. 从Chrome商店安装 [链接](https://chrome.google.com/webstore/detail/leetcode-editor-extension/kikcppmgphhkffcdhldclbidggbieegc)
 2. 下载文件进行安装
 
 ## 使用方式

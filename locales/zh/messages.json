@@ -22,5 +22,9 @@
   "open_ide": {
     "message": "打开IDE",
     "description": "message."
+  },
+  "affix_toolbox": {
+    "message": "工具箱",
+    "description": "message."
   }
 }
