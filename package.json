@@ -1,12 +1,13 @@
 {
   "name": "leetcode-editor-extension",
   "displayName": "Leetcode editor extension",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Quickly open problems in IntelliJ Platform IDEs.",
   "author": "shuzijun",
   "scripts": {
     "dev": "plasmo dev",
-    "build": "plasmo build"
+    "build": "plasmo build",
+    "package": "plasmo build --zip"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
@@ -24,7 +25,7 @@
     "@types/node": "18.8.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
-    "plasmo": "0.57.2",
+    "plasmo": "0.58.0",
     "prettier": "2.7.1",
     "typescript": "4.8.4"
   },
